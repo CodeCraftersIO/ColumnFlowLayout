@@ -25,6 +25,10 @@ class ColumnFlowLayout: UICollectionViewLayout {
         return cv.bounds.inset(by: cv.layoutMargins).size.width
     }
     
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
+    
     override func prepare() {
         super.prepare()
         guard let cv = collectionView else { return }
