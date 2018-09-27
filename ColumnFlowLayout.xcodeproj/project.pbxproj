@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F511D755215D252900281814 /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511D754215D252900281814 /* ColumnFlowLayout.swift */; };
 		F5357CC22153EC8F002CBD0A /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5357CC12153EC8F002CBD0A /* PostCollectionViewCell.swift */; };
 		F5357CC42153ECA3002CBD0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5357CC32153ECA3002CBD0A /* Extensions.swift */; };
 		F5546F552153AFB4005E3DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5546F542153AFB4005E3DC4 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F511D754215D252900281814 /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		F5357CC12153EC8F002CBD0A /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		F5357CC32153ECA3002CBD0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F5546F512153AFB4005E3DC4 /* ColumnFlowLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColumnFlowLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				F5546F542153AFB4005E3DC4 /* AppDelegate.swift */,
 				F5546F562153AFB4005E3DC4 /* ViewController.swift */,
 				F5357CC12153EC8F002CBD0A /* PostCollectionViewCell.swift */,
+				F511D754215D252900281814 /* ColumnFlowLayout.swift */,
 				F5357CC32153ECA3002CBD0A /* Extensions.swift */,
 				F5546F5B2153AFB5005E3DC4 /* Assets.xcassets */,
 				F5546F5D2153AFB5005E3DC4 /* LaunchScreen.storyboard */,
@@ -201,6 +204,7 @@
 			files = (
 				F5546F572153AFB4005E3DC4 /* ViewController.swift in Sources */,
 				F5546F552153AFB4005E3DC4 /* AppDelegate.swift in Sources */,
+				F511D755215D252900281814 /* ColumnFlowLayout.swift in Sources */,
 				F5357CC22153EC8F002CBD0A /* PostCollectionViewCell.swift in Sources */,
 				F5357CC42153ECA3002CBD0A /* Extensions.swift in Sources */,
 			);

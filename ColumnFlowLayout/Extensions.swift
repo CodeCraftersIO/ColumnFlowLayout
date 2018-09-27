@@ -39,6 +39,23 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
         return constraints
     }
+    
+    @discardableResult
+    public func pinToSuperviewSafeArea(withEdges edges: UIEdgeInsets = .zero) -> [NSLayoutConstraint] {
+        guard let superView = superview else { return [] }
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let safeAreaGuide = superView.safeAreaLayoutGuide
+        let constraints: [NSLayoutConstraint] = [
+            leadingAnchor.constraint(equalTo: safeAreaGuide.leadingAnchor, constant: edges.left),
+            trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -edges.right),
+            topAnchor.constraint(equalTo: safeAreaGuide.topAnchor, constant: edges.top),
+            bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -edges.bottom)
+        ]
+        NSLayoutConstraint.activate(constraints)
+        return constraints
+    }
+
 }
 
 extension UIEdgeInsets {
@@ -110,5 +127,15 @@ public extension NSAttributedString {
         let range = NSRange(location: 0, length: self.length)
         let font = self.attributes(at: 0, longestEffectiveRange: nil, in: range)[.font] as! UIFont
         return modifyingFont(font.bolded)
+    }
+}
+
+public extension Collection {
+
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    subscript(safe index: Index) -> Element? {
+        return index >= startIndex && index < endIndex
+            ? self[index]
+            : nil
     }
 }

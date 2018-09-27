@@ -10,7 +10,7 @@ class ViewController: UIViewController {
     let collectionView: UICollectionView = {
         return UICollectionView(
             frame: .zero,
-            collectionViewLayout: UICollectionViewFlowLayout()
+            collectionViewLayout: ColumnFlowLayout()
         )
     }()
 
@@ -20,14 +20,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let safeView = UIView.init()
+        safeView.backgroundColor = .red
+        view.addSubview(safeView)
+        safeView.pinToSuperviewSafeArea()
+
         view.backgroundColor = UIColor.lightGray
         view.addSubview(collectionView)
+        
         collectionView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = true
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.pinToSuperview()
         collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "PostCollectionViewCell")
+        collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 }
 
@@ -41,6 +49,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCollectionViewCell", for: indexPath) as! PostCollectionViewCell
         cell.configureFor(viewModel: self.mockData[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print("willDisplay: \(cell)")
     }
 }
 
